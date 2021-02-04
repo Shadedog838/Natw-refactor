@@ -124,13 +124,13 @@
     left: 0
   }
   .g-article-list .left-arrow::before {
-    background-image: url('./img/arrow-left.svg')
+    background-image: url('../img/arrow-left.svg')
   }
   .g-article-list .right-arrow {
     right: 0
   }
   .g-article-list .right-arrow::before {
-    background-image: url('./img/arrow-right.svg')
+    background-image: url('../img/arrow-right.svg')
   }
   .g-article-list ul:after {
     content: '';
@@ -442,7 +442,7 @@
     }
   }
   header .menu .toggle .icon {
-    background: url('./img/menu_arrow_blue.svg') center center no-repeat;
+    background: url('../img/menu_arrow_blue.svg') center center no-repeat;
     background-size: 21px 12px;
     width: 27px;
     height: 17px;
@@ -513,7 +513,7 @@
   header .menu nav a .info {
     width: 21px;
     height: 21px;
-    background: url('./img/introduction.svg');
+    background: url('../img/introduction.svg');
     background-size: cover;
     display: inline-block;
     margin-right: 7px
@@ -526,7 +526,7 @@
     padding-right: 45px
   }
   header .logo {
-    background: #00aeef url('./img/n.svg') 50% 75% no-repeat;
+    background: #00aeef url('../img/n.svg') 50% 75% no-repeat;
     background-size: 65%;
     color: white;
     text-decoration: none;
@@ -578,22 +578,22 @@
     opacity: .7
   }
   footer .social .gplus {
-    background: url('./img/google-plus.svg')
+    background: url('../img/google-plus.svg')
   }
   footer .social .twitter {
-    background: url('./img/twitter.svg')
+    background: url('../img/twitter.svg')
   }
   footer .social .facebook {
-    background: url('./img/facebook.svg')
+    background: url('../img/facebook.svg')
   }
   footer .social .linkedin {
-    background: url('./img/linkedin.svg')
+    background: url('../img/linkedin.svg')
   }
   footer .social .email {
-    background: url('./img/mail.svg')
+    background: url('../img/mail.svg')
   }
   footer .social .instagram {
-    background: url('./img/instagram.svg')
+    background: url('../img/instagram.svg')
   }
   footer .alt-nav {
     margin-bottom: 7px
@@ -688,7 +688,7 @@
   #map .recent-posts .toggle .icon {
     width: 15px;
     height: 15px;
-    background: black url('./img/recent_posts_down_arrow.svg') center center no-repeat;
+    background: black url('../img/recent_posts_down_arrow.svg') center center no-repeat;
     background-size: 15px 15px;
     border: 1px solid white;
     border-radius: 999px;
@@ -818,7 +818,7 @@
   #map #map-container .niel-icon {
     width: 30px;
     height: 41px;
-    background: url('./img/location.svg') center;
+    background: url('../img/location.svg') center;
     background-size: contain;
     background-repeat: no-repeat
   }
@@ -829,7 +829,7 @@
     background-repeat: no-repeat
   }
   #map #map-container .niel-icon:hover {
-    background: url('./img/location_hover.svg') center;
+    background: url('../img/location_hover.svg') center;
     background-size: contain;
     background-repeat: no-repeat
   }
@@ -999,13 +999,13 @@
     background-repeat: no-repeat
   }
   #services ul li.datav:before {
-    background-image: url('./img/analyze-icon.svg')
+    background-image: url('../img/analyze-icon.svg')
   }
   #services ul li.science:before {
-    background-image: url('./img/lightbulb-icon.svg')
+    background-image: url('../img/lightbulb-icon.svg')
   }
   #services ul li.people:before {
-    background-image: url('./img/influencer-icon.svg');
+    background-image: url('../img/influencer-icon.svg');
     background-size: 58%
   }
   #services ul li:last-child {

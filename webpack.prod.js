@@ -14,15 +14,14 @@ module.exports = {
 
     // https://webpack.js.org/concepts/entry-points/#multi-page-application
     entry: {
-        index: './src/main.js',
+        main: './src/js/main.js',
     },
 
     // how to write the compiled files to disk
     // https://webpack.js.org/concepts/output/
     output: {
-        filename: 'bundle.js',
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js',
+        path: buildPath
     },
 
     // https://webpack.js.org/concepts/loaders/
@@ -56,8 +55,9 @@ module.exports = {
             filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css",
-            chunkFilename: "[id].[contenthash].css"
+            filename: 'main.css',
+            chunkFilename: "main.css"
+
         })
     ],
 

@@ -4,7 +4,7 @@ module.exports = {
 
   // https://webpack.js.org/concepts/entry-points/#multi-page-application
   entry: {
-    index: './src/main.js',
+    index: './src/js/main.js',
 },
 
   // https://webpack.js.org/configuration/dev-server/
