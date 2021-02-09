@@ -1,3 +1,4 @@
+import _ from 'lodash';
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

@@ -3,7 +3,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin')
 const buildPath = path.resolve(__dirname, 'dist');
 
@@ -36,20 +35,21 @@ module.exports = {
                     presets: ['@babel/preset-env']
                 }
             },
-        ],
-        loaders: [
             {
-              test: /.css?$/,
-              loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }),
-              exclude: /node_modules/
-            }
-          ]
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+              },
+              {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+              },
+        ]
+
     },
 
     // https://webpack.js.org/concepts/plugins/
     plugins: [
         new CleanWebpackPlugin(),
-        new ExtractTextPlugin("css/[name].css"),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'body',
@@ -57,9 +57,8 @@ module.exports = {
             filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: 'main.css',
-            chunkFilename: "main.css"
-
+            filename: "[name].[contenthash].css",
+            chunkFilename: "[id].[contenthash].css"
         })
     ],
 
