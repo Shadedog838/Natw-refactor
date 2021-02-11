@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-
+  devtool: 'eval-cheap-module-source-map',
   // https://webpack.js.org/concepts/entry-points/#multi-page-application
   entry: {
     index: './src/js/main.js',
@@ -9,24 +9,41 @@ module.exports = {
 
   // https://webpack.js.org/configuration/dev-server/
   devServer: {
-    port: 8080
+    port: 8080,
+    writeToDisk: false
   },
 
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js$/i,
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-            presets: ['@babel/preset-env']
+          presets: ['@babel/preset-env']
         }
       },
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
-          "style-loader",
-          "css-loader"
+          'style-loader',
+          'css-loader'
+          // Please note we are not running postcss here
+        ]
+      },
+      {
+        // Load all images as base64 encoding if they are smaller than 8192 bytes
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              // On development we want to see where the file is coming from, hence we preserve the [path]
+              name: '[path][name].[ext]?hash=[hash:20]',
+              esModule: false,
+              limit: 8192
+            }
+          }
         ]
       }
     ]

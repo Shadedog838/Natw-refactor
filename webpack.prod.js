@@ -1,11 +1,12 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin')
-const buildPath = path.resolve(__dirname, 'dist');
+const path = require('path')
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+
+const buildPath = path.resolve(__dirname, 'dist')
 module.exports = {
 
     // This option controls if and how source maps are generated.
@@ -27,25 +28,37 @@ module.exports = {
     // https://webpack.js.org/concepts/loaders/
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env']
-                }
-            },
-            {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
-              },
+          {
+            test: /\.js$/i,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          },
+          {
+            test: /\.css$/i,
+            use: [
+              MiniCssExtractPlugin.loader,
+              'css-loader'
+            ]
+          },
+          {
+            // Load all images as base64 encoding if they are smaller than 8192 bytes
+            test: /\.(png|jpe?g|gif|svg)$/i,
+            use: [
               {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-              },
+                loader: require.resolve("file-loader") + "?name=../[path][name].[ext]",
+                options: {
+                  name: '[name].[hash:20].[ext]',
+                  esModule: false,
+                  limit: 8192
+                }
+              }
+            ]
+          }
         ]
-
-    },
+      },
 
     // https://webpack.js.org/concepts/plugins/
     plugins: [
@@ -57,9 +70,9 @@ module.exports = {
             filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css",
-            chunkFilename: "[id].[contenthash].css"
-        })
+      filename: 'main.css',
+      chunkFilename: 'main.css'
+    })
     ],
 
     // https://webpack.js.org/configuration/optimization/

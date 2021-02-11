@@ -1,4 +1,5 @@
-import _ from 'lodash';
+require('normalize.css/normalize.css')
+require('../css/main.css')
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

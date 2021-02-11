@@ -297,7 +297,7 @@
     content: '';
     width: 18px;
     height: 17px;
-    background: url('/img/view_post.svg');
+    /* background: url('/img/view_post.svg'); */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -324,7 +324,7 @@
     content: '';
     width: 22px;
     height: 22px;
-    background: url('/img/gray_x.svg');
+    /* background: url('/img/gray_x.svg'); */
     background-size: cover;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -442,7 +442,7 @@
     }
   }
   header .menu .toggle .icon {
-    background: url('../img/menu_arrow_blue.svg') center center no-repeat;
+    /* background: url('../img/menu_arrow_blue.svg') center center no-repeat; */
     background-size: 21px 12px;
     width: 27px;
     height: 17px;
@@ -456,7 +456,7 @@
     }
   }
   header .menu .toggle.active .icon {
-    background-image: url('/img/menu_x_blue.svg');
+    /* background-image: url('/img/menu_x_blue.svg'); */
     background-size: 17px 17px
   }
   @media (max-width: 500px) {
@@ -513,7 +513,7 @@
   header .menu nav a .info {
     width: 21px;
     height: 21px;
-    background: url('../img/introduction.svg');
+    /* background: url('../img/introduction.svg'); */
     background-size: cover;
     display: inline-block;
     margin-right: 7px
@@ -712,7 +712,7 @@
     display: inline-block
   }
   #map .recent-posts.active .toggle .icon {
-    background-image: url('/img/recent_x.svg');
+    /* background-image: url('/img/recent_x.svg'); */
     background-size: 11px 12px
   }
   #map .recent-posts .content {
@@ -824,7 +824,7 @@
   }
   #map #map-container .niel-icon.active {
     width: 35px;
-    background: url('/img/location_selected.svg') center;
+    /* background: url('/img/location_selected.svg') center; */
     background-size: contain;
     background-repeat: no-repeat
   }
@@ -1109,10 +1109,10 @@
     overflow: hidden
   }
   #more .g-article-list .left-arrow::before {
-    background-image: url('/img/arrow-left-yellow.svg')
+    /* background-image: url('/img/arrow-left-yellow.svg') */
   }
   #more .g-article-list .right-arrow::before {
-    background-image: url('/img/arrow-right-yellow.svg')
+    /* background-image: url('/img/arrow-right-yellow.svg') */
   }
   #more h2 span {
     border-right-color: #006b99
