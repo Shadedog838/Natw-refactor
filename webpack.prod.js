@@ -21,7 +21,7 @@ module.exports = {
     // how to write the compiled files to disk
     // https://webpack.js.org/concepts/output/
     output: {
-        filename: 'main.js',
+        filename: './js/main.js',
         path: buildPath
     },
 
@@ -48,11 +48,10 @@ module.exports = {
             test: /\.(png|jpe?g|gif|svg)$/i,
             use: [
               {
-                loader: require.resolve("file-loader") + "?name=../[path][name].[ext]",
+                loader: 'file-loader',
                 options: {
-                  name: '[name].[hash:20].[ext]',
-                  esModule: false,
-                  limit: 8192
+                  name: '[name].[ext]',
+                  outputPath: './img'
                 }
               }
             ]
