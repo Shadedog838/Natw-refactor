@@ -70,8 +70,8 @@ module.exports = {
             filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
-      filename: 'main.css',
-      chunkFilename: 'main.css'
+      filename: './css/main.css',
+      chunkFilename: './css/main.css'
     })
     ],
 
