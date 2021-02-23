@@ -1,5 +1,4 @@
-require('normalize.css/normalize.css')
-require('../css/main.css')
+require('../css/main.css');
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
