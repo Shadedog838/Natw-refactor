@@ -1,4 +1,5 @@
 require('../css/main.css');
+require('../img/google-plus.svg');
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

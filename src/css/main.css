@@ -578,7 +578,7 @@
     opacity: .7
   }
   footer .social .gplus {
-    background: url('../img/google-plus.svg');
+    background: url("../img/google-plus.svg");
   }
   footer .social .twitter {
     background: url('../img/twitter.svg')
